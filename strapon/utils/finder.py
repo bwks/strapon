@@ -11,7 +11,7 @@ def find_missing_items(data):
     if not isinstance(data, list):
         raise ValueError('data must be a [list, of, integer(s)]')
 
-    if not len(data) or len(data) == 1:
+    if len(data) <= 1:
         return data
 
     # Remove duplicates and order list.

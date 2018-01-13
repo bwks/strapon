@@ -16,7 +16,7 @@ def compress_list_items(data, prefix=''):
     if not isinstance(data, list):
         raise ValueError('data must be a [list, of, integer(s)]')
 
-    if not len(data):
+    if not data:
         return data
     elif len(data) == 1:
         return ['{}{}'.format(prefix, data[0])]
