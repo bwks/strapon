@@ -14,10 +14,13 @@ def explode_list_items(data, delimiter=',', range_char='-'):
     if not isinstance(data, str):
         raise ValueError('data must be a string')
 
+    if not data:
+        return [data]
+
     items = []
     for item in data.split(delimiter):
         if item.isdigit():
-            items.append(item)
+            items.append(int(item))
         elif range_char in item:
             start, end = [int(i) for i in item.split(range_char)]
             items += [i for i in (range(start, end + 1))]
